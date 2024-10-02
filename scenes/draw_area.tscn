@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://2e16lfcqqdjw"]
+
+[ext_resource type="Script" path="res://scripts/draw_area.gd" id="1_beh4u"]
+[ext_resource type="Texture2D" uid="uid://bwhjgbf1a8is4" path="res://assets/sl_072622_51930_13.jpg" id="2_7pyke"]
+
+[node name="draw_area" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_beh4u")
+
+[node name="bg" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.388235)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7pyke")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="bg_layer" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="layer" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5

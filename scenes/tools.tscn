@@ -1,0 +1,208 @@
+[gd_scene load_steps=9 format=3 uid="uid://cugka7ykcextb"]
+
+[ext_resource type="Script" path="res://scripts/tools.gd" id="1_a18ko"]
+[ext_resource type="Texture2D" uid="uid://bofholkvstke" path="res://assets/icons/disk_save_icon.png" id="2_36tue"]
+[ext_resource type="Texture2D" uid="uid://cfehl5nyriggh" path="res://assets/icons/pencil_icon.png" id="3_3t07n"]
+[ext_resource type="Texture2D" uid="uid://bujhw3s314dca" path="res://assets/icons/fill_bucket_icon.png" id="4_7qd5e"]
+[ext_resource type="Texture2D" uid="uid://c1dhmld7vp25" path="res://assets/icons/symmetry_icon.png" id="5_4d0xe"]
+[ext_resource type="Texture2D" uid="uid://ck1f20mkmamfn" path="res://assets/icons/erase_bucket.png" id="5_kj28h"]
+[ext_resource type="Texture2D" uid="uid://bmd6haismyp4m" path="res://assets/icons/erase_icon.png" id="6_a3yhf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6m68l"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="Tools" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a18ko")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 178.0
+grow_horizontal = 2
+color = Color(0.151406, 0.14412, 0.289915, 1)
+
+[node name="ColorPalettes" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 170.0
+grow_horizontal = 2
+
+[node name="ContainerPalette" type="HSplitContainer" parent="ColorPalettes"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1
+theme_override_constants/autohide = 0
+split_offset = 520
+dragger_visibility = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorPalettes/ContainerPalette"]
+layout_mode = 2
+
+[node name="Palette" type="GridContainer" parent="ColorPalettes/ContainerPalette/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 6
+
+[node name="PaletteOptions" type="Control" parent="ColorPalettes/ContainerPalette"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorPalettes/ContainerPalette/PaletteOptions"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 18.0
+offset_right = 50.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_6m68l")
+text = "Palette:"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PaletteSelector" type="OptionButton" parent="ColorPalettes/ContainerPalette/PaletteOptions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -28.5
+offset_right = 52.0
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+selected = 0
+item_count = 6
+popup/item_0/text = "Default"
+popup/item_1/text = "Gray"
+popup/item_1/id = 1
+popup/item_2/text = "Purple"
+popup/item_2/id = 2
+popup/item_3/text = "Green"
+popup/item_3/id = 3
+popup/item_4/text = "Red"
+popup/item_4/id = 4
+popup/item_5/text = "Blue"
+popup/item_5/id = 5
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="ColorPalettes/ContainerPalette/PaletteOptions"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = 18.5
+offset_right = 56.0
+offset_bottom = 64.5
+grow_vertical = 2
+
+[node name="BottomTool" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -249.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="BottomTool"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.145098, 0.290196, 1)
+metadata/_edit_lock_ = true
+
+[node name="BtnSave" type="TextureButton" parent="BottomTool"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -106.5
+offset_right = -32.0
+offset_bottom = -32.5
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("2_36tue")
+stretch_mode = 5
+
+[node name="BtnPencil" type="TextureButton" parent="BottomTool"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 4.0
+offset_right = 124.0
+offset_bottom = 100.0
+texture_normal = ExtResource("3_3t07n")
+stretch_mode = 5
+
+[node name="BtnBucket" type="TextureButton" parent="BottomTool"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = -9.0
+offset_right = 234.0
+offset_bottom = 93.0
+texture_normal = ExtResource("4_7qd5e")
+stretch_mode = 5
+
+[node name="BtnEraseBucket" type="TextureButton" parent="BottomTool"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 92.0
+offset_right = 234.0
+offset_bottom = 194.0
+texture_normal = ExtResource("5_kj28h")
+stretch_mode = 5
+
+[node name="BtnSymmetry" type="TextureButton" parent="BottomTool"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 3.0
+offset_right = 333.0
+offset_bottom = 91.0
+texture_normal = ExtResource("5_4d0xe")
+stretch_mode = 5
+
+[node name="BtnErase" type="TextureButton" parent="BottomTool"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 101.0
+offset_right = 118.0
+offset_bottom = 195.0
+texture_normal = ExtResource("6_a3yhf")
+stretch_mode = 5
+
+[connection signal="item_selected" from="ColorPalettes/ContainerPalette/PaletteOptions/PaletteSelector" to="." method="_on_palette_selector_item_selected"]
+[connection signal="button_up" from="ColorPalettes/ContainerPalette/PaletteOptions/ColorPickerButton" to="." method="_on_color_picker_button_button_up"]
+[connection signal="color_changed" from="ColorPalettes/ContainerPalette/PaletteOptions/ColorPickerButton" to="." method="_on_color_picker_button_color_changed"]
+[connection signal="button_up" from="BottomTool/BtnPencil" to="." method="_on_btn_pencil_button_up"]
+[connection signal="button_up" from="BottomTool/BtnBucket" to="." method="_on_btn_bucket_button_up"]
+[connection signal="button_up" from="BottomTool/BtnEraseBucket" to="." method="_on_btn_erase_bucket_button_up"]
+[connection signal="button_up" from="BottomTool/BtnSymmetry" to="." method="_on_btn_symmetry_button_up"]
+[connection signal="button_up" from="BottomTool/BtnErase" to="." method="_on_btn_erase_button_up"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://btgdj2ueet5s5"]
+
+[ext_resource type="PackedScene" uid="uid://2e16lfcqqdjw" path="res://scenes/draw_area.tscn" id="1_wl7nx"]
+[ext_resource type="PackedScene" uid="uid://cugka7ykcextb" path="res://scenes/tools.tscn" id="2_f7qjw"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="draw_area" parent="." instance=ExtResource("1_wl7nx")]
+layout_mode = 1
+
+[node name="Tools" parent="." instance=ExtResource("2_f7qjw")]
+layout_mode = 1
+
+[connection signal="pressed" from="Tools/BottomTool/BtnSave" to="draw_area" method="_on_btn_save_pressed"]
+
+[editable path="Tools"]

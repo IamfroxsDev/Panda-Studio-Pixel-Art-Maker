@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr6i0koiohjje"]
+
+[ext_resource type="Script" path="res://scripts/Color.gd" id="1_m74br"]
+
+[node name="Color" type="ColorRect"]
+modulate = Color(0.93408, 0.93408, 0.93408, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_m74br")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
